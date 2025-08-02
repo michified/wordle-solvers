@@ -31,16 +31,19 @@ The results demonstrate significant differences between the two strategies:
 ## 📈 Figures
 
 ### Figure 1: Guess Distribution for 4-Letter Words
-![Figure 1](guess_distribution_k4.png)
-<p style="text-align: center;"><em> Figure 1: Guess distribution curve of different strategies for 4-letter words </em></p>
+![Guess distribution curve of different strategies for 4-letter words](guess_distribution_k4.png)
+| *Figure 1: Guess distribution curve of different strategies for 4-letter words* |
+|:-----------------------------------------------------------------------------:|
 
 ### Figure 2: Guess Distribution for 7-Letter Words
-![Figure 2](guess_distribution_k7.png)
-<p style="text-align: center;"><em> Figure 2: Guess distribution curve of different strategies for 7-letter words </em></p>
+![Guess distribution curve of different strategies for 7-letter words](guess_distribution_k7.png)
+| *Figure 2: Guess distribution curve of different strategies for 7-letter words* |
+|:-----------------------------------------------------------------------------:|
 
 ### Figure 3: Execution Time and Guess Counts for Entropy with Random Sampling
-![Figure 3](random_sampling_graph.png)
-<p style="text-align: center;"><em> Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words </em></p>
+![Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words](random_sampling_graph.png)
+| *Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words* |
+|:-----------------------------------------------------------------------------:|
 
 ## ⚙️ Implications and Applications
 This study highlights the importance of heuristic optimization in algorithmic problem-solving, with potential applications in game-solving AI, natural language processing, and other constraint-satisfaction problems. The insights gained here may inform the design of algorithms for similar puzzles or real-world scenarios requiring decision-making without full information.
