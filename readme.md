@@ -30,15 +30,12 @@ The results demonstrate significant differences between the two strategies:
 
 ## 📈 Figures
 
-### Figure 1: Guess Distribution for 4-Letter Words
 ![Guess distribution curve of different strategies for 4-letter words](guess_distribution_k4.png)
 <div align="center"><em>Figure 1: Guess distribution curve of different strategies for 4-letter words</em></div>
 
-### Figure 2: Guess Distribution for 7-Letter Words
 ![Guess distribution curve of different strategies for 7-letter words](guess_distribution_k7.png)
 <div align="center"><em>Figure 2: Guess distribution curve of different strategies for 7-letter words</em></div>
 
-### Figure 3: Execution Time and Guess Counts for Entropy with Random Sampling
 ![Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words](random_sampling_graph.png)
 <div align="center"><em>Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words</em></div>
 
