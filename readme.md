@@ -28,13 +28,19 @@ The results demonstrate significant differences between the two strategies:
 - **Word Length Impact**: The performance gap between strategies decreased for 7-letter puzzles, as heuristics were able to select words with cut the search space more compared to the random strategy for 4 letters, while these benefits decreased for longer word lengths as every word has, on average, more distinct letters. Refer to *Figure 1* and *Figure 2*.
 - **Optimizing Runtime and Guess Counts**: Seen by the entropy with random sampling strategy, the Law of Large Numbers holds true in this scenario, which allows the runtime complexity to be cut dramatically due to needing to iterate through smaller samples while still maintaining competitive guess counts. Refer to *Figure 3*.
 
-### 📈 Figures
-![Figure 1. Guess distribution curve of different strategies for 4-letter words](guess_distribution_k4.png)
-<div style="text-align: center;"> *Figure 1. Guess distribution curve of different strategies for 4-letter words* </div> 
-![Figure 2. Guess distribution curve of different strategies for 7-letter words](guess_distribution_k7.png)
-<div style="text-align: center;"> *Figure 2. Guess distribution curve of different strategies for 7-letter words* </div>
-![Figure 3. Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words](random_sampling_graph.png)
-<div style="text-align: center;"> *Figure 3. Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words* </div>
+## 📈 Figures
+
+### Figure 1: Guess Distribution for 4-Letter Words
+![Figure 1](guess_distribution_k4.png)
+<p style="text-align: center;"><em>Figure 1: Guess distribution curve of different strategies for 4-letter words</em></p>
+
+### Figure 2: Guess Distribution for 7-Letter Words
+![Figure 2](guess_distribution_k7.png)
+<p style="text-align: center;"><em>Figure 2: Guess distribution curve of different strategies for 7-letter words</em></p>
+
+### Figure 3: Execution Time and Guess Counts for Entropy with Random Sampling
+![Figure 3](random_sampling_graph.png)
+<p style="text-align: center;"><em>Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words</em></p>
 
 ## ⚙️ Implications and Applications
 This study highlights the importance of heuristic optimization in algorithmic problem-solving, with potential applications in game-solving AI, natural language processing, and other constraint-satisfaction problems. The insights gained here may inform the design of algorithms for similar puzzles or real-world scenarios requiring decision-making without full information.
