@@ -41,6 +41,7 @@ The results demonstrate significant differences between the two strategies:
 ### Figure 3: Execution Time and Guess Counts for Entropy with Random Sampling
 ![Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words](random_sampling_graph.png)
 <div align="center"><em>Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words</em></div>
+
 ## ⚙️ Implications and Applications
 This study highlights the importance of heuristic optimization in algorithmic problem-solving, with potential applications in game-solving AI, natural language processing, and other constraint-satisfaction problems. The insights gained here may inform the design of algorithms for similar puzzles or real-world scenarios requiring decision-making without full information.
 
