@@ -1,10 +1,16 @@
 # A Comparative Study of Heuristic Strategies for Solving the Wordle Puzzle
 
+---
+
 ## 📌 Overview
 This is an investigation into the computational cost and effectiveness of random and heuristic strategies in solving 4- and 7-letter Wordle puzzles. The Wordle puzzle, a popular word-guessing game, requires players to identify a target word within a limited number of guesses, using feedback on letter accuracy and position. The investigation aims to compare the performance of random guessing approaches against heuristic strategies, which leverage feedback to optimize subsequent guesses, in terms of efficiency (number of guesses required) and computational cost (processing time).
 
+---
+
 ## 🔍 Research Question
 To what extent do random and heuristic strategies differ in computational cost and effectiveness when solving 4- and 7-letter Wordle puzzles?
+
+---
 
 ## 📃 Methodology (check scripts/strategies.cpp)
 The study implements two primary strategies:
@@ -21,12 +27,16 @@ The experiment was conducted using Python to simulate Wordle games for both 4-le
 
 Simulations were run over 3,000 trials for each strategy (except entropy with random sampling, which ran 12 sample sizes x 1,000 random words for each size = 12,000 trials) and word length to ensure statistical reliability. The target words were randomly selected from the respective word lists, and performance was evaluated under consistent conditions.
 
+---
+
 ## 📊 Findings (CPU: 13th Gen Intel(R) Core(TM) i7-13700K)
 The results demonstrate significant differences between the two strategies:
 - **Effectiveness**: The heuristic strategies consistently outperformed the random strategy, requiring fewer guesses on average for both 4-letter (~5 vs. 6.3 guesses) and 7-letter (~3.5 vs. 4 guesses) puzzles. These heuristic approaches benefited from feedback-driven optimization, reducing the search space effectively.
 - **Computational Cost**: The random strategy exhibited lower computational cost (1-6 ms per puzzle) compared to the heuristic strategies (average ~700 ms for 4-letter and ~2000 ms for 7-letter puzzles) due to its simplicity. However, the heuristic strategy’s increased computational cost was justified by its superior effectiveness, particularly for smaller word lengths where random guesses are likely unable to narrow down the search space by much.
 - **Word Length Impact**: The performance gap between strategies decreased for 7-letter puzzles, as heuristics were able to select words with cut the search space more compared to the random strategy for 4 letters, while these benefits decreased for longer word lengths as every word has, on average, more distinct letters. Refer to *Figure 1* and *Figure 2*.
 - **Optimizing Runtime and Guess Counts**: Seen by the entropy with random sampling strategy, the Law of Large Numbers holds true in this scenario, which allows the runtime complexity to be cut dramatically due to needing to iterate through smaller samples while still maintaining competitive guess counts. Refer to *Figure 3*.
+
+---
 
 ## 📈 Figures
 
@@ -46,13 +56,19 @@ The results demonstrate significant differences between the two strategies:
 <div align="center"><em>Figure 3: Execution time and guess counts for the entropy with random sampling strategy with different sample sizes for 7-letter words</em></div>
 <br />
 
+---
+
 ## ⚙️ Implications and Applications
 This study highlights the importance of heuristic optimization in algorithmic problem-solving, with potential applications in game-solving AI, natural language processing, and other constraint-satisfaction problems. The insights gained here may inform the design of algorithms for similar puzzles or real-world scenarios requiring decision-making without full information.
+
+---
 
 ## 🎓 Future Work
 - **Parallelization**: Creating the bins from testing words can be parallelized which reduces execution time depending on the number of cores of the machine.
 - **Tree-based Strategy**: Consider building a precomputed decision tree which uses results from one of the heuristic strategies, with nodes as guesses and branches as feedback color combinations. This allows quick traversal of the tree when obtaining feedback to minimize execution time. However, precomputation is costly and incurs a further memory requirement of storing the tree.
 - **Testing More Datasets**: The English dictionary has words such that there are very few anagrams and repeating letters in words. However, against more adversarial datasets, such as those with many anagrams and/or repeating letters, the results may differ.
+
+---
 
 ## 🚀 Build and Run
 1. Make a copy of this repo
@@ -87,6 +103,8 @@ This study highlights the importance of heuristic optimization in algorithmic pr
 - Matplotlib package
 - GCC 12+ (`-std=c++23`)
 - CMake 3.15+ (optional, for building from source)
+
+---
 
 ## 📖 References and Resources
 - Greenberg, R.I. (2024). Effective Wordle Heuristics. [arXiv preprint arXiv:2408.11730](https://arxiv.org/pdf/2408.11730).
