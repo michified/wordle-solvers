@@ -95,7 +95,7 @@ int convert_colors_to_num(const string& colors) {
     return num;
 }
 
-pair<int, double> max_neg_bin_size_strategy(const pair<string, int>& answer, int k) {
+pair<int, double> minimax_binsize_strategy(const pair<string, int>& answer, int k) {
     const auto& l = (k == 4) ? four_letter_words : seven_letter_words;
     string f(l[0].first.size(), 'X');
     int guesses = 0;

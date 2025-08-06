@@ -9,7 +9,7 @@ void benchmark_strategies(const vector<pair<string, int>>& words, int word_lengt
 
     // Strategy results: {total_guesses, total_time}
     pair<int, double> random_results = {0, 0};
-    pair<int, double> max_neg_bin_results = {0, 0};
+    pair<int, double> minimax_binsize_results = {0, 0};
     pair<int, double> max_num_bins_results = {0, 0};
     pair<int, double> max_info_entropy_results = {0, 0};
 
@@ -20,14 +20,14 @@ void benchmark_strategies(const vector<pair<string, int>>& words, int word_lengt
             cout << "Progress: " << progress << "/" << sample_size << endl;
         }
         auto [r_guesses, r_time] = random_strategy(words[idx], word_length, rng);
-        auto [n_guesses, n_time] = max_neg_bin_size_strategy(words[idx], word_length);
+        auto [n_guesses, n_time] = minimax_binsize_strategy(words[idx], word_length);
         auto [b_guesses, b_time] = max_num_bins_strategy(words[idx], word_length);
         auto [e_guesses, e_time] = max_info_entropy_strategy(words[idx], word_length);
 
         random_results.first += r_guesses;
         random_results.second += r_time;
-        max_neg_bin_results.first += n_guesses;
-        max_neg_bin_results.second += n_time;
+        minimax_binsize_results.first += n_guesses;
+        minimax_binsize_results.second += n_time;
         max_num_bins_results.first += b_guesses;
         max_num_bins_results.second += b_time;
         max_info_entropy_results.first += e_guesses;
@@ -48,9 +48,9 @@ void benchmark_strategies(const vector<pair<string, int>>& words, int word_lengt
     };
 
     print_row("Random", random_results);
-    print_row("Max Neg Bin Size", max_neg_bin_results);
-    print_row("Max Num Bins", max_num_bins_results);
-    print_row("Max Info Entropy", max_info_entropy_results);
+    print_row("Minimax Binsize", minimax_binsize_results);
+    print_row("MaxNumBins", max_num_bins_results);
+    print_row("MaxInfoEntropy", max_info_entropy_results);
 }
 
 int main() {
@@ -69,13 +69,13 @@ int main() {
 
     random_device rd;
     mt19937 rng(rd());
-    size_t sample_size = 3000;
+    size_t sample_size = 5;
 
     cout << "\nWord list sizes:" << endl;
     cout << "4-letter words: " << four_letter_words.size() << endl;
     cout << "7-letter words: " << seven_letter_words.size() << endl;
 
-    if(four_letter_words.empty() || seven_letter_words.empty()) {
+    if(four_letter_words.empty() or seven_letter_words.empty()) {
         cerr << "Error: Word lists are empty! Please check file paths." << endl;
         return 1;
     }

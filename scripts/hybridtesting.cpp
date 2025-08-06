@@ -16,7 +16,7 @@ int main() {
 
     random_device rd;
     mt19937 rng(rd());
-    size_t sample_size = 1000; // not too many
+    size_t sample_size = 10; // not too many
 
     cout << "Testing max_info_entropy_strategy_with_sampling (7-letter words):\n";
     vector<int> S_values;
