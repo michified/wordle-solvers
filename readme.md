@@ -76,7 +76,7 @@ This study highlights the importance of heuristic optimization in algorithmic pr
    ```bash
    cd scripts
    ```
-3. Compile and run the testing scripts
+3. Compile and run the testing scripts (optional)
    ```bash
    g++ fourandseventesting.cpp -o fourandseventesting.exe
    ```
@@ -91,6 +91,14 @@ This study highlights the importance of heuristic optimization in algorithmic pr
    then
    ```bash
    ./hybridtesting.exe
+   ```
+4. Try the 5-letter Wordle (Shannon entropy) solver on today's New York Times Wordle puzzle:
+   ```bash
+   g++ demo.cpp -o demo.exe
+   ```
+   then
+   ```bash
+   ./demo.exe
    ```
 
 ### Dependencies
@@ -111,3 +119,4 @@ This study highlights the importance of heuristic optimization in algorithmic pr
 - Jonathanwelton. (2022). GitHub - jonathanwelton/word-lists: A collection of n-letter word lists in json format. GitHub. https://github.com/jonathanwelton/word-lists
 - Lahiri, A. et al. (2023). Deterministic Algorithmic Approaches to Solve Generalised Wordle. [arXiv preprint arXiv:2305.14756](https://arxiv.org/pdf/2305.14756).
 - Unzueta, D. (2025). Information Theory applied to Wordle. Towards Data Science. https://towardsdatascience.com/information-theory-applied-to-wordle-b63b34a6538e/
+- 

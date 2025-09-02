@@ -20,14 +20,14 @@ string determine_wordle_colors(const string& guess, const string& answer) {
     string colors(guess.size(), 'X');
     string answer_copy = answer;
     // Check for correct letters in the correct position
-    for (size_t i = 0; i < guess.size(); ++i) {
+    for (int i = 0; i < guess.size(); ++i) {
         if (guess[i] == answer[i]) {
             colors[i] = 'G';
             answer_copy[i] = '*'; // Mark as used
         }
     }
     // Check for correct letters in the wrong position
-    for (size_t i = 0; i < guess.size(); ++i) {
+    for (int i = 0; i < guess.size(); ++i) {
         if (colors[i] == 'X') {
             auto pos = answer_copy.find(guess[i]);
             if (pos != string::npos) {
@@ -56,7 +56,7 @@ pair<int, double> random_strategy(const pair<string, int>& answer, int k, mt1993
     vector<int> indices;
     for (const auto& p : l) indices.push_back(p.second);
     while (f != string(l[0].first.size(), 'G')) {
-        uniform_int_distribution<size_t> dist(0, indices.size() - 1);
+        uniform_int_distribution<int> dist(0, indices.size() - 1);
         int guess_idx = indices[dist(rng)];
         guesses++;
         f = fetch_wordle_colors(guess_idx, answer_idx, k);

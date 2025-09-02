@@ -1,11 +1,11 @@
 #include "strategies.cpp"
 #include <iomanip>
 
-void benchmark_strategies(const vector<pair<string, int>>& words, int word_length, size_t sample_size, mt19937& rng) {
+void benchmark_strategies(const vector<pair<string, int>>& words, int word_length, int sample_size, mt19937& rng) {
     vector<int> indices(words.size());
     iota(indices.begin(), indices.end(), 0);
     shuffle(indices.begin(), indices.end(), rng);
-    indices.resize(min(sample_size, words.size()));
+    indices.resize(min(sample_size, (int) words.size()));
 
     // Strategy results: {total_guesses, total_time}
     pair<int, double> random_results = {0, 0};
@@ -69,7 +69,7 @@ int main() {
 
     random_device rd;
     mt19937 rng(rd());
-    size_t sample_size = 5;
+    int sample_size = 5;
 
     cout << "\nWord list sizes:" << endl;
     cout << "4-letter words: " << four_letter_words.size() << endl;
