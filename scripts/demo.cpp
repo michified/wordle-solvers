@@ -70,9 +70,14 @@ void max_info_entropy_strategy() {
         }
     }
     vector<int> indices;
+    double max_entropy = -1.0;
     for (const auto& p : possible_five_letter_words) indices.push_back(p.second);
     while (f != "GGGGG") {
-        cout << "Guess: " << five_letter_words[best_guess_idx].first << endl;
+        if (max_entropy == -1) {
+            cout << "Guess: " << five_letter_words[best_guess_idx].first << " (pre-set)" << endl;
+        } else {
+            cout << "Guess: " << five_letter_words[best_guess_idx].first << " (entropy: " << max_entropy   << ")" << endl;
+        }
         f = fetch_wordle_colors_from_user();
         vector<int> next_indices;
         for (int w_idx : indices) {
@@ -94,7 +99,7 @@ void max_info_entropy_strategy() {
             break;
         }
         
-        double max_entropy = -1.0;
+        max_entropy = -1.0;
         for (int w0_idx = 0; w0_idx < five_letter_words.size(); ++w0_idx) {
             map<string, int> bin_sizes_map;
             for (int w1_idx : indices) {
