@@ -73,7 +73,7 @@ void max_info_entropy_strategy() {
     double max_entropy = -1.0;
     for (const auto& p : possible_five_letter_words) indices.push_back(p.second);
     while (f != "GGGGG") {
-        if (max_entropy == -1) {
+        if (max_entropy == -1.0) {
             cout << "Guess: " << five_letter_words[best_guess_idx].first << " (pre-set)" << endl;
         } else {
             cout << "Guess: " << five_letter_words[best_guess_idx].first << " (entropy: " << max_entropy   << ")" << endl;
@@ -86,20 +86,16 @@ void max_info_entropy_strategy() {
             }
         }
         indices = next_indices;
-        if (indices.empty()) break;
-        
-        if (indices.size() == 1) {
-            string target_word = possible_five_letter_words[indices[0]].first;
-            for (const auto& p : five_letter_words) {
-                if (p.first == target_word) {
-                    best_guess_idx = p.second;
-                    break;
-                }
+
+        for (const auto& p : five_letter_words) {
+            if (p.first == possible_five_letter_words[indices[0]].first) {
+                best_guess_idx = p.second;
+                break;
             }
-            break;
         }
+        if (indices.size() <= 1) break;
         
-        max_entropy = -1.0;
+        max_entropy = 1.0;
         for (int w0_idx = 0; w0_idx < five_letter_words.size(); ++w0_idx) {
             map<string, int> bin_sizes_map;
             for (int w1_idx : indices) {
