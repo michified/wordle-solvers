@@ -64,7 +64,7 @@ void max_info_entropy_strategy() {
 
     int best_guess_idx = five_letter_words[0].second;
     for (const auto& p : five_letter_words) {
-        if (p.first == "tares") {
+        if (p.first == "slate") {
             best_guess_idx = p.second;
             break;
         }
